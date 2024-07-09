@@ -1,0 +1,6 @@
+{
+  "key": "retail_transition_matrix_schema",
+  "name": "Retail transition matrix schema schema",
+  "description": "Retail transition matrix schema schema",
+  "business_segments": ["RETAIL"]
+}

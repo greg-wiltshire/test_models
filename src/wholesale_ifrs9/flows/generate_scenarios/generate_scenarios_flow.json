@@ -1,0 +1,415 @@
+{
+  "nodes": {
+    "validate_facility_data": {
+      "nodeType": "MODEL_NODE",
+      "label": "Validate facility data",
+      "inputs": [
+        "facilities_data"
+      ],
+      "outputs": [
+        "validation_results"
+      ]
+    },
+    "generate_uk_scenarios": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate UK scenarios",
+      "inputs": [
+        "uk_scenario_definitions",
+        "uk_base_case_scenario",
+        "uk_historic_macroeconomic_variables",
+        "uk_historic_default_rates",
+        "uk_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "uk_quarterly_scenarios",
+        "uk_monthly_scenarios",
+        "uk_distribution_definition"
+      ]
+    },
+    "generate_gcc_scenarios": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate GCC scenarios",
+      "inputs": [
+        "gcc_scenario_definitions",
+        "gcc_base_case_scenario",
+        "gcc_historic_macroeconomic_variables",
+        "gcc_historic_default_rates",
+        "gcc_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "gcc_quarterly_scenarios",
+        "gcc_monthly_scenarios",
+        "gcc_distribution_definition"
+      ]
+    },
+    "facilities_data": {
+      "nodeType": "INPUT_NODE",
+      "label": "Facilities data"
+    },
+    "uk_scenario_definitions": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK scenario definitions"
+    },
+    "uk_historic_macroeconomic_variables": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK historic macroeconomic variables"
+    },
+    "uk_historic_default_rates": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK historic default rates"
+    },
+    "uk_macroeconomic_model_coefficients": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK macroeconomic model coefficients"
+    },
+    "uk_base_case_scenario": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK macroeconomic base scenario"
+    },
+    "gcc_scenario_definitions": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC scenario definitions"
+    },
+    "gcc_historic_macroeconomic_variables": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC historic macroeconomic variables"
+    },
+    "gcc_historic_default_rates": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC historic default rates"
+    },
+    "gcc_macroeconomic_model_coefficients": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC macroeconomic model coefficients"
+    },
+    "gcc_base_case_scenario": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC macroeconomic base scenario"
+    },
+    "validation_results": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "validation_results"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "Facility data validation summary"
+          }
+        }
+      ]
+    },
+    "uk_quarterly_scenarios": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_quarterly_scenarios"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK quarterly scenario forecasts"
+          }
+        }
+      ]
+    },
+    "uk_monthly_scenarios": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_monthly_scenarios"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK monthly scenario forecasts"
+          }
+        }
+      ]
+    },
+    "uk_distribution_definition": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_distribution_definition"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK fitted distribution statistics"
+          }
+        }
+      ]
+    },
+    "gcc_quarterly_scenarios": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_quarterly_scenarios"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC quarterly scenario forecasts"
+          }
+        }
+      ]
+    },
+    "gcc_monthly_scenarios": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_monthly_scenarios"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC monthly scenario forecasts"
+          }
+        }
+      ]
+    },
+    "gcc_distribution_definition": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_distribution_definition"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC fitted distribution statistics"
+          }
+        }
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": {
+        "node": "facilities_data"
+      },
+      "target": {
+        "node": "validate_facility_data",
+        "socket": "facilities_data"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_scenario_definitions"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_scenario_definitions"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_base_case_scenario"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_base_case_scenario"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_historic_macroeconomic_variables"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_historic_macroeconomic_variables"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_historic_default_rates"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_historic_default_rates"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_scenario_definitions"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_scenario_definitions"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_base_case_scenario"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_base_case_scenario"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_historic_macroeconomic_variables"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_historic_macroeconomic_variables"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_historic_default_rates"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_historic_default_rates"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "validate_facility_data",
+        "socket": "validation_results"
+      },
+      "target": {
+        "node": "validation_results"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_quarterly_scenarios"
+      },
+      "target": {
+        "node": "uk_quarterly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_monthly_scenarios"
+      },
+      "target": {
+        "node": "uk_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_distribution_definition"
+      },
+      "target": {
+        "node": "uk_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_quarterly_scenarios"
+      },
+      "target": {
+        "node": "gcc_quarterly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_monthly_scenarios"
+      },
+      "target": {
+        "node": "gcc_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_distribution_definition"
+      },
+      "target": {
+        "node": "gcc_distribution_definition"
+      }
+    }
+  ]
+}

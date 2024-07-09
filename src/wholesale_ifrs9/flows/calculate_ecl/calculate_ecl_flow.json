@@ -1,0 +1,1089 @@
+{
+  "nodes": {
+    "validate_facility_data": {
+      "nodeType": "MODEL_NODE",
+      "label": "Validate facility data",
+      "inputs": [
+        "facilities_data"
+      ],
+      "outputs": [
+        "validation_results"
+      ]
+    },
+    "generate_uk_scenarios": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate UK scenarios",
+      "inputs": [
+        "uk_scenario_definitions",
+        "uk_base_case_scenario",
+        "uk_historic_macroeconomic_variables",
+        "uk_historic_default_rates",
+        "uk_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "uk_quarterly_scenarios",
+        "uk_monthly_scenarios",
+        "uk_distribution_definition"
+      ]
+    },
+    "generate_gcc_scenarios": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate GCC scenarios",
+      "inputs": [
+        "gcc_scenario_definitions",
+        "gcc_base_case_scenario",
+        "gcc_historic_macroeconomic_variables",
+        "gcc_historic_default_rates",
+        "gcc_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "gcc_quarterly_scenarios",
+        "gcc_monthly_scenarios",
+        "gcc_distribution_definition"
+      ]
+    },
+    "facilities_data": {
+      "nodeType": "INPUT_NODE",
+      "label": "Facilities data"
+    },
+    "uk_scenario_definitions": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK scenario definitions"
+    },
+    "uk_historic_macroeconomic_variables": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK historic macroeconomic variables"
+    },
+    "uk_historic_default_rates": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK historic default rates"
+    },
+    "uk_macroeconomic_model_coefficients": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK macroeconomic model coefficients"
+    },
+    "uk_base_case_scenario": {
+      "nodeType": "INPUT_NODE",
+      "label": "UK macroeconomic base scenario"
+    },
+    "gcc_scenario_definitions": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC scenario definitions"
+    },
+    "gcc_historic_macroeconomic_variables": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC historic macroeconomic variables"
+    },
+    "gcc_historic_default_rates": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC historic default rates"
+    },
+    "gcc_macroeconomic_model_coefficients": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC macroeconomic model coefficients"
+    },
+    "gcc_base_case_scenario": {
+      "nodeType": "INPUT_NODE",
+      "label": "GCC macroeconomic base scenario"
+    },
+    "validation_results": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "validation_results"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "Facility data validation summary"
+          }
+        }
+      ]
+    },
+    "uk_monthly_scenarios": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_monthly_scenarios"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK monthly scenario forecasts"
+          }
+        }
+      ]
+    },
+    "uk_distribution_definition": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_distribution_definition"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK fitted distribution statistics"
+          }
+        }
+      ]
+    },
+    "gcc_monthly_scenarios": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_monthly_scenarios"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC monthly scenario forecasts"
+          }
+        }
+      ]
+    },
+    "gcc_distribution_definition": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_distribution_definition"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC fitted distribution statistics"
+          }
+        }
+      ]
+    },
+    "generate_pd_curves_for_uk_corporate_portfolio": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate PD curves for the UK Corporate portfolio",
+      "inputs": [
+        "corporate_rating_master_scale",
+        "corporate_transition_matrix",
+        "uk_monthly_scenarios",
+        "uk_distribution_definition",
+        "uk_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "uk_corporate_pd_term_structures"
+      ]
+    },
+    "generate_pd_curves_for_uk_sme_portfolio": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate PD curves for the UK SME portfolio",
+      "inputs": [
+        "sme_rating_master_scale",
+        "sme_transition_matrix",
+        "uk_monthly_scenarios",
+        "uk_distribution_definition",
+        "uk_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "uk_sme_pd_term_structures"
+      ]
+    },
+    "generate_pd_curves_for_uk_hnwi_portfolio": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate PD curves for the UK HNWI portfolio",
+      "inputs": [
+        "hnwi_rating_master_scale",
+        "hnwi_transition_matrix",
+        "uk_monthly_scenarios",
+        "uk_distribution_definition",
+        "uk_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "uk_hnwi_pd_term_structures"
+      ]
+    },
+    "generate_pd_curves_for_gcc_corporate_portfolio": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate PD curves for the GCC Corporate portfolio",
+      "inputs": [
+        "corporate_rating_master_scale",
+        "corporate_transition_matrix",
+        "gcc_monthly_scenarios",
+        "gcc_distribution_definition",
+        "gcc_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "gcc_corporate_pd_term_structures"
+      ]
+    },
+    "generate_pd_curves_for_gcc_retail_portfolio": {
+      "nodeType": "MODEL_NODE",
+      "label": "Generate PD curves for the GCC Retail portfolio",
+      "inputs": [
+        "retail_rating_master_scale",
+        "retail_transition_matrix",
+        "gcc_monthly_scenarios",
+        "gcc_distribution_definition",
+        "gcc_macroeconomic_model_coefficients"
+      ],
+      "outputs": [
+        "gcc_retail_pd_term_structures"
+      ]
+    },
+    "corporate_rating_master_scale": {
+      "nodeType": "INPUT_NODE",
+      "label": "Corporate Rating Master Scale (RMS)"
+    },
+    "corporate_transition_matrix": {
+      "nodeType": "INPUT_NODE",
+      "label": "Corporate transition matrix"
+    },
+    "sme_rating_master_scale": {
+      "nodeType": "INPUT_NODE",
+      "label": "SME Rating Master Scale (RMS)"
+    },
+    "sme_transition_matrix": {
+      "nodeType": "INPUT_NODE",
+      "label": "SME transition matrix"
+    },
+    "hnwi_rating_master_scale": {
+      "nodeType": "INPUT_NODE",
+      "label": "HNWI Rating Master Scale (RMS)"
+    },
+    "hnwi_transition_matrix": {
+      "nodeType": "INPUT_NODE",
+      "label": "HNWI transition matrix"
+    },
+    "retail_rating_master_scale": {
+      "nodeType": "INPUT_NODE",
+      "label": "Retail Rating Master Scale (RMS)"
+    },
+    "retail_transition_matrix": {
+      "nodeType": "INPUT_NODE",
+      "label": "Retail transition matrix"
+    },
+    "uk_corporate_pd_term_structures": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_corporate_pd_term_structures"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK Corporate portfolio PD term structures"
+          }
+        }
+      ]
+    },
+    "uk_sme_pd_term_structures": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_sme_pd_term_structures"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK SME portfolio PD term structures"
+          }
+        }
+      ]
+    },
+    "uk_hnwi_pd_term_structures": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "uk_hnwi_pd_term_structures"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "UK HNWI portfolio PD term structures"
+          }
+        }
+      ]
+    },
+    "gcc_corporate_pd_term_structures": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_corporate_pd_term_structures"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC Corporate portfolio PD term structures"
+          }
+        }
+      ]
+    },
+    "gcc_retail_pd_term_structures": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "gcc_retail_pd_term_structures"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "GCC Retail portfolio PD term structures"
+          }
+        }
+      ]
+    },
+    "staging_data": {
+      "nodeType": "INPUT_NODE",
+      "label": "Probationary period status"
+    },
+    "stage_2_definition": {
+      "nodeType": "INPUT_NODE",
+      "label": "Stage 2 definition"
+    },
+    "stage_3_definition": {
+      "nodeType": "INPUT_NODE",
+      "label": "Stage 3 definition"
+    },
+    "retail_ccf": {
+      "nodeType": "INPUT_NODE",
+      "label": "Retail Credit Conversion Factors (CCF)"
+    },
+    "ead_prepayment_curves": {
+      "nodeType": "INPUT_NODE",
+      "label": "EAD prepayment factors"
+    },
+    "staging_external_rating_mapping": {
+      "nodeType": "INPUT_NODE",
+      "label": "External rating mapping"
+    },
+    "calculate_ecl": {
+      "nodeType": "MODEL_NODE",
+      "label": "Calculate ECL",
+      "inputs": [
+        "facilities_data",
+        "staging_data",
+        "stage_2_definition",
+        "stage_3_definition",
+        "retail_ccf",
+        "corporate_rating_master_scale",
+        "retail_rating_master_scale",
+        "sme_rating_master_scale",
+        "hnwi_rating_master_scale",
+        "staging_external_rating_mapping",
+        "gcc_scenario_definitions",
+        "uk_scenario_definitions",
+        "gcc_corporate_pd_term_structures",
+        "gcc_retail_pd_term_structures",
+        "uk_corporate_pd_term_structures",
+        "uk_sme_pd_term_structures",
+        "uk_hnwi_pd_term_structures",
+        "ead_prepayment_curves"
+      ],
+      "outputs": [
+        "ecl_calculation"
+      ]
+    },
+    "ecl_calculation": {
+      "nodeType": "OUTPUT_NODE",
+      "nodeAttrs": [
+        {
+          "attrName": "key",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "ecl_calculation"
+          }
+        },
+        {
+          "attrName": "name",
+          "value": {
+            "type": {
+              "basicType": "STRING"
+            },
+            "stringValue": "ECL calculation"
+          }
+        }
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": {
+        "node": "facilities_data"
+      },
+      "target": {
+        "node": "validate_facility_data",
+        "socket": "facilities_data"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_scenario_definitions"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_scenario_definitions"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_base_case_scenario"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_base_case_scenario"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_historic_macroeconomic_variables"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_historic_macroeconomic_variables"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_historic_default_rates"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_historic_default_rates"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_scenario_definitions"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_scenario_definitions"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_base_case_scenario"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_base_case_scenario"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_historic_macroeconomic_variables"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_historic_macroeconomic_variables"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_historic_default_rates"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_historic_default_rates"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "validate_facility_data",
+        "socket": "validation_results"
+      },
+      "target": {
+        "node": "validation_results"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_monthly_scenarios"
+      },
+      "target": {
+        "node": "uk_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_distribution_definition"
+      },
+      "target": {
+        "node": "uk_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_monthly_scenarios"
+      },
+      "target": {
+        "node": "gcc_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_distribution_definition"
+      },
+      "target": {
+        "node": "gcc_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "corporate_rating_master_scale"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "corporate_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "corporate_rating_master_scale"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "corporate_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "corporate_transition_matrix"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "corporate_transition_matrix"
+      }
+    },
+    {
+      "source": {
+        "node": "corporate_transition_matrix"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "corporate_transition_matrix"
+      }
+    },
+    {
+      "source": {
+        "node": "sme_rating_master_scale"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "sme_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "sme_transition_matrix"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "sme_transition_matrix"
+      }
+    },
+    {
+      "source": {
+        "node": "hnwi_rating_master_scale"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "hnwi_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "hnwi_transition_matrix"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "hnwi_transition_matrix"
+      }
+    },
+    {
+      "source": {
+        "node": "retail_rating_master_scale"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_retail_portfolio",
+        "socket": "retail_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "retail_transition_matrix"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_retail_portfolio",
+        "socket": "retail_transition_matrix"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "uk_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "uk_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "uk_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "gcc_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_macroeconomic_model_coefficients"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_retail_portfolio",
+        "socket": "gcc_macroeconomic_model_coefficients"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "uk_corporate_pd_term_structures"
+      },
+      "target": {
+        "node": "uk_corporate_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "uk_sme_pd_term_structures"
+      },
+      "target": {
+        "node": "uk_sme_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "uk_hnwi_pd_term_structures"
+      },
+      "target": {
+        "node": "uk_hnwi_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "gcc_corporate_pd_term_structures"
+      },
+      "target": {
+        "node": "gcc_corporate_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_distribution_definition"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "uk_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_distribution_definition"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "uk_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_distribution_definition"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "uk_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_distribution_definition"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "gcc_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_distribution_definition"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_retail_portfolio",
+        "socket": "gcc_distribution_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_monthly_scenarios"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "uk_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_monthly_scenarios"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "uk_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_uk_scenarios",
+        "socket": "uk_monthly_scenarios"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "uk_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_monthly_scenarios"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "gcc_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_gcc_scenarios",
+        "socket": "gcc_monthly_scenarios"
+      },
+      "target": {
+        "node": "generate_pd_curves_for_gcc_retail_portfolio",
+        "socket": "gcc_monthly_scenarios"
+      }
+    },
+    {
+      "source": {
+        "node": "facilities_data"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "facilities_data"
+      }
+    },
+    {
+      "source": {
+        "node": "corporate_rating_master_scale"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "corporate_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "retail_rating_master_scale"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "retail_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "sme_rating_master_scale"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "sme_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "hnwi_rating_master_scale"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "hnwi_rating_master_scale"
+      }
+    },
+    {
+      "source": {
+        "node": "gcc_scenario_definitions"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "gcc_scenario_definitions"
+      }
+    },
+    {
+      "source": {
+        "node": "uk_scenario_definitions"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "uk_scenario_definitions"
+      }
+    },
+    {
+      "source": {
+        "node": "staging_data"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "staging_data"
+      }
+    },
+    {
+      "source": {
+        "node": "stage_2_definition"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "stage_2_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "stage_3_definition"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "stage_3_definition"
+      }
+    },
+    {
+      "source": {
+        "node": "retail_ccf"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "retail_ccf"
+      }
+    },
+    {
+      "source": {
+        "node": "ead_prepayment_curves"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "ead_prepayment_curves"
+      }
+    },
+    {
+      "source": {
+        "node": "staging_external_rating_mapping"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "staging_external_rating_mapping"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_uk_corporate_portfolio",
+        "socket": "uk_corporate_pd_term_structures"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "uk_corporate_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_uk_sme_portfolio",
+        "socket": "uk_sme_pd_term_structures"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "uk_sme_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_uk_hnwi_portfolio",
+        "socket": "uk_hnwi_pd_term_structures"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "uk_hnwi_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_gcc_corporate_portfolio",
+        "socket": "gcc_corporate_pd_term_structures"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "gcc_corporate_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "generate_pd_curves_for_gcc_retail_portfolio",
+        "socket": "gcc_retail_pd_term_structures"
+      },
+      "target": {
+        "node": "calculate_ecl",
+        "socket": "gcc_retail_pd_term_structures"
+      }
+    },
+    {
+      "source": {
+        "node": "calculate_ecl",
+        "socket": "ecl_calculation"
+      },
+      "target": {
+        "node": "ecl_calculation"
+      }
+    }
+  ]
+}

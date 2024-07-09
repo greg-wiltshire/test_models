@@ -1,0 +1,6 @@
+{
+  "key": "generate_pd_curves_for_gcc_retail_portfolio",
+  "name": "Generate PD curves for the GCC Retail portfolio (default)",
+  "description": "A model that forecasts PD curves for the the Gulf Cooperation Council (GCC) Retail portfolio",
+  "business_segments": ["GCC"]
+}

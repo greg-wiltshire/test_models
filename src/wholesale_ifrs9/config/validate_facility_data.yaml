@@ -1,0 +1,10 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2023-11-30"
+
+    inputs:
+      facilities_data: "inputs/FacilityData - Nov2021.csv"
+
+    outputs:
+      validation_results: "outputs/validation_results.csv"

@@ -1,0 +1,10 @@
+storage:
+
+  defaultBucket: example_data
+  defaultFormat: csv
+
+  buckets:
+    example_data:
+      protocol: LOCAL
+      properties:
+        rootPath: C:/Users/jgw/PycharmProjects/test_models/data/wholesale_ifrs9

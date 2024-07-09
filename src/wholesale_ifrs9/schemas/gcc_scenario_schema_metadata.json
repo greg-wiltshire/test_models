@@ -1,0 +1,6 @@
+{
+  "key": "uk_scenario_schema",
+  "name": "GCC scenario schema",
+  "description": "GCC scenario schema, this schema contains the macroeconomic time series for the econometric models",
+  "regions": ["GCC"]
+}

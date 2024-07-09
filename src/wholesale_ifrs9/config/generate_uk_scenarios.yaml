@@ -1,0 +1,18 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2021-11-30"
+      n_years: 10
+      distribution_fitting_method: "gumbel_r"
+
+    inputs:
+      uk_scenario_definitions: "inputs/uk_scenario_definitions.csv"
+      uk_base_case_scenario: "inputs/uk_base_case_scenario.csv"
+      uk_historic_macroeconomic_variables: "inputs/uk_historic_macroeconomic_variables.csv"
+      uk_historic_default_rates: "inputs/uk_historic_default_rates.csv"
+      uk_macroeconomic_model_coefficients: "inputs/uk_macroeconomic_model_coefficients.csv"
+
+    outputs:
+      uk_quarterly_scenarios: "outputs/uk_quarterly_scenarios.csv"
+      uk_monthly_scenarios: "outputs/uk_monthly_scenarios.csv"
+      uk_distribution_definition: "outputs/uk_distribution_definition.csv"

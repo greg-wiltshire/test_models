@@ -1,0 +1,6 @@
+{
+  "key": "generate_gcc_scenarios",
+  "name": "Generate GCC scenarios (default)",
+  "description": "A model that forecasts default rates and macroeconomic variables for each of the scenarios for the Gulf Cooperation Council (GCC) region",
+  "business_segments": ["GCC"]
+}

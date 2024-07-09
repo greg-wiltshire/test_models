@@ -1,0 +1,6 @@
+{
+  "key": "scenario_definitions_schema",
+  "name": "Scenario definitions schema",
+  "description": "Scenario definitions schema",
+  "regions": ["UK", "GCC"]
+}

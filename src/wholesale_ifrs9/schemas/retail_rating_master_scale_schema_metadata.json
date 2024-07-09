@@ -1,0 +1,6 @@
+{
+  "key": "retail_rating_master_scale_schema",
+  "name": "Retail rating master scale_schema",
+  "description": "Retail rating master scale_schema",
+  "business_segments": ["GCC","RETAIL"]
+}

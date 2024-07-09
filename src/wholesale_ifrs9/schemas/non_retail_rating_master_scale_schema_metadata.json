@@ -1,0 +1,7 @@
+{
+  "key": "non_retail_rating_master_scale_schema",
+  "name": "Non-retail rating master scale_schema",
+  "description": "Non-retail rating master scale_schema",
+  "regions": ["UK", "GCC"],
+  "portfolios": ["CORPORATE", "SME", "HNWI"]
+}

@@ -1,0 +1,6 @@
+{
+  "key": "generate_pd_curves_for_uk_hnwi_portfolio",
+  "name": "Generate PD curves for the UK HNWI portfolio (default)",
+  "description": "A model that forecasts PD curves for the UK High Net Worth Individuals (HNWI) portfolio",
+  "business_segments": ["UK"]
+}

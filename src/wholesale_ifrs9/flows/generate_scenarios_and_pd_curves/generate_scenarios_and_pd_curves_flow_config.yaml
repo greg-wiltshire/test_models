@@ -1,0 +1,57 @@
+job:
+  runFlow:
+    flow: "generate_scenarios_and_pd_curves_flow.json"
+
+    parameters:
+      reporting_date: "2021-11-30"
+      n_years: 10
+      distribution_fitting_method: "gumbel_r"
+
+    inputs:
+      facilities_data: "inputs/FacilityData - Nov2021.csv"
+      uk_scenario_definitions: "inputs/uk_scenario_definitions.csv"
+      uk_base_case_scenario: "inputs/uk_base_case_scenario.csv"
+      uk_historic_macroeconomic_variables: "inputs/uk_historic_macroeconomic_variables.csv"
+      uk_historic_default_rates: "inputs/uk_historic_default_rates.csv"
+      uk_macroeconomic_model_coefficients: "inputs/uk_macroeconomic_model_coefficients.csv"
+      gcc_scenario_definitions: "inputs/gcc_scenario_definitions.csv"
+      gcc_base_case_scenario: "inputs/gcc_base_case_scenario.csv"
+      gcc_historic_macroeconomic_variables: "inputs/gcc_historic_macroeconomic_variables.csv"
+      gcc_historic_default_rates: "inputs/gcc_historic_default_rates.csv"
+      gcc_macroeconomic_model_coefficients: "inputs/gcc_macroeconomic_model_coefficients.csv"
+
+      corporate_rating_master_scale: "inputs/corporate_rating_master_scale.csv"
+      corporate_transition_matrix: "inputs/corporate_transition_matrix.csv"
+
+      hnwi_rating_master_scale: "inputs/hnwi_rating_master_scale.csv"
+      hnwi_transition_matrix: "inputs/hnwi_transition_matrix.csv"
+
+      sme_rating_master_scale: "inputs/sme_rating_master_scale.csv"
+      sme_transition_matrix: "inputs/sme_transition_matrix.csv"
+
+      retail_rating_master_scale: "inputs/retail_rating_master_scale.csv"
+      retail_transition_matrix: "inputs/retail_transition_matrix.csv"
+
+    models:
+      validate_facility_data: "wholesale_ifrs9.models.validate_facility_data.Main"
+      generate_uk_scenarios: "wholesale_ifrs9.models.generate_uk_scenarios.Main"
+      generate_gcc_scenarios: "wholesale_ifrs9.models.generate_gcc_scenarios.Main"
+      generate_pd_curves_for_uk_corporate_portfolio: "wholesale_ifrs9.models.generate_pd_curves_for_uk_corporate_portfolio.Main"
+      generate_pd_curves_for_uk_sme_portfolio: "wholesale_ifrs9.models.generate_pd_curves_for_uk_sme_portfolio.Main"
+      generate_pd_curves_for_uk_hnwi_portfolio: "wholesale_ifrs9.models.generate_pd_curves_for_uk_hnwi_portfolio.Main"
+      generate_pd_curves_for_gcc_corporate_portfolio: "wholesale_ifrs9.models.generate_pd_curves_for_gcc_corporate_portfolio.Main"
+      generate_pd_curves_for_gcc_retail_portfolio: "wholesale_ifrs9.models.generate_pd_curves_for_gcc_retail_portfolio.Main"
+
+    outputs:
+      validation_results: "outputs/flows/validation_results.csv"
+      # uk_quarterly_scenarios: "outputs/flows/uk_quarterly_scenarios.csv"
+      uk_monthly_scenarios: "outputs/flows/uk_monthly_scenarios.csv"
+      uk_distribution_definition: "outputs/flows/uk_distribution_definition.csv"
+      # gcc_quarterly_scenarios: "outputs/flows/gcc_quarterly_scenarios.csv"
+      gcc_monthly_scenarios: "outputs/flows/gcc_monthly_scenarios.csv"
+      gcc_distribution_definition: "outputs/flows/gcc_distribution_definition.csv"
+      uk_corporate_pd_term_structures: "outputs/flows/uk_corporate_pd_term_structures.csv"
+      uk_sme_pd_term_structures: "outputs/flows/uk_sme_pd_term_structures.csv"
+      uk_hnwi_pd_term_structures: "outputs/flows/uk_hnwi_pd_term_structures.csv"
+      gcc_corporate_pd_term_structures: "outputs/flows/gcc_corporate_pd_term_structures.csv"
+      gcc_retail_pd_term_structures: "outputs/flows/gcc_retail_pd_term_structures.csv"

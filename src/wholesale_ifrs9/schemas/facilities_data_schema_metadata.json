@@ -1,0 +1,6 @@
+{
+  "key": "facilities_data_schema",
+  "name": "Facilities data schema",
+  "description": "Facilities data schema",
+  "regions": ["UK", "GCC"]
+}

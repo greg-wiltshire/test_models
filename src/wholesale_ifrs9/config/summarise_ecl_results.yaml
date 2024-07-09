@@ -1,0 +1,10 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2021-11-30"
+
+    inputs:
+      ecl_calculation: "outputs/ecl_calculation.csv"
+
+    outputs:
+      ecl_summary: "outputs/ecl_summary.csv"

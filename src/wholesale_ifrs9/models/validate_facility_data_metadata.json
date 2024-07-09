@@ -1,0 +1,6 @@
+{
+  "key": "validate_facility_data",
+  "name": "Validate facility data",
+  "description": "A model that checks that the facility data uploaded can be used by the ECL calculation engine",
+  "business_segments": ["UK", "GCC"]
+}

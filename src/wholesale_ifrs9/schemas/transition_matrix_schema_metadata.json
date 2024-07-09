@@ -1,0 +1,6 @@
+{
+  "key": "transition_matrix_schema",
+  "name": "Non-retail transition matrix schema schema",
+  "description":  "Non-retail transition matrix schema schema",
+  "regions": ["CORPORATE", "NHWI", "SME"]
+}

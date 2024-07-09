@@ -1,0 +1,6 @@
+{
+  "key": "historic_default_rates_schema",
+  "name": "Historic default rates schema",
+  "description": "Historic default rates schema",
+  "regions": ["UK", "GCC"]
+}

@@ -1,0 +1,6 @@
+{
+  "key": "gcc_historic_macroeconomic_variables_schema",
+  "name": "GCC historic macroeconomic variables schema",
+  "description":  "GCC scenario schema, this schema contains the historic macroeconomic time series for the econometric models",
+  "regions": ["GCC"]
+}

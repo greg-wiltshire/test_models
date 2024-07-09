@@ -1,0 +1,15 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2021-11-30"
+      n_years: 10
+
+    inputs:
+      corporate_rating_master_scale: "inputs/corporate_rating_master_scale.csv"
+      corporate_transition_matrix: "inputs/corporate_transition_matrix.csv"
+      uk_monthly_scenarios: "outputs/uk_monthly_scenarios.csv"
+      uk_distribution_definition: "outputs/uk_distribution_definition.csv"
+      uk_macroeconomic_model_coefficients: "inputs/uk_macroeconomic_model_coefficients.csv"
+
+    outputs:
+      uk_corporate_pd_term_structures: "outputs/uk_corporate_pd_term_structures.csv"

@@ -1,0 +1,35 @@
+job:
+  runFlow:
+    flow: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/flows/generate_scenarios/generate_scenarios_flow.json"
+
+    parameters:
+      reporting_date: "2021-11-30"
+      n_years: 10
+      distribution_fitting_method: "gumbel_r"
+
+    inputs:
+      facilities_data: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/tnp_ifrs9_ecl_calculation_engine/run_engine_outside_ui/test_files/FacilityData - Nov2021 - Copy.csv"
+      uk_scenario_definitions: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/uk_scenario_definitions.csv"
+      uk_base_case_scenario: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/uk_base_case_scenario.csv"
+      uk_historic_macroeconomic_variables: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/uk_historic_macroeconomic_variables.csv"
+      uk_historic_default_rates: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/uk_historic_default_rates.csv"
+      uk_macroeconomic_model_coefficients: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/uk_macroeconomic_model_coefficients.csv"
+      gcc_scenario_definitions: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/gcc_scenario_definitions.csv"
+      gcc_base_case_scenario: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/gcc_base_case_scenario.csv"
+      gcc_historic_macroeconomic_variables: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/gcc_historic_macroeconomic_variables.csv"
+      gcc_historic_default_rates: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/gcc_historic_default_rates.csv"
+      gcc_macroeconomic_model_coefficients: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/data/gcc_macroeconomic_model_coefficients.csv"
+
+    models:
+      validate_facility_data: "trac_poc.models.validate_facility_data.Main"
+      generate_uk_scenarios: "trac_poc.models.generate_uk_scenarios.Main"
+      generate_gcc_scenarios: "trac_poc.models.generate_gcc_scenarios.Main"
+
+    outputs:
+      validation_results: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/validation_results.csv"
+      uk_quarterly_scenarios: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/uk_quarterly_scenarios.csv"
+      uk_monthly_scenarios: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/uk_monthly_scenarios.csv"
+      uk_distribution_definition: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/uk_distribution_definition.csv"
+      gcc_quarterly_scenarios: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/gcc_quarterly_scenarios.csv"
+      gcc_monthly_scenarios: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/gcc_monthly_scenarios.csv"
+      gcc_distribution_definition: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/trac_poc/outputs/flows/gcc_distribution_definition.csv"

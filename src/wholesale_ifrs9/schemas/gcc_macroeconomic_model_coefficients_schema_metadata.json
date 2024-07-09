@@ -1,0 +1,6 @@
+{
+  "key": "gcc_macroeconomic_model_coefficients_schema",
+  "name": "GCC macroeconomic model coefficients schema",
+  "description": "GCC macroeconomic model coefficients schema, this schema contains the macroeconomic coefficients for the econometric models",
+  "regions": ["GCC"]
+}

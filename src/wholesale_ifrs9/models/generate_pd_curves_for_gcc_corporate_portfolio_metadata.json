@@ -1,0 +1,6 @@
+{
+  "key": "generate_pd_curves_for_gcc_corporate_portfolio",
+  "name": "Generate PD curves for the GCC Corporate portfolio (default)",
+  "description": "A model that forecasts PD curves for the the Gulf Cooperation Council (GCC) Corporate portfolio",
+  "business_segments": ["GCC"]
+}

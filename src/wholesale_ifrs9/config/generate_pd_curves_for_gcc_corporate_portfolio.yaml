@@ -1,0 +1,15 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2021-11-30"
+      n_years: 10
+
+    inputs:
+      corporate_rating_master_scale: "inputs/corporate_rating_master_scale.csv"
+      corporate_transition_matrix: "inputs/corporate_transition_matrix.csv"
+      gcc_monthly_scenarios: "outputs/gcc_monthly_scenarios.csv"
+      gcc_distribution_definition: "outputs/gcc_distribution_definition.csv"
+      gcc_macroeconomic_model_coefficients: "inputs/gcc_macroeconomic_model_coefficients.csv"
+
+    outputs:
+      gcc_corporate_pd_term_structures: "outputs/gcc_corporate_pd_term_structures.csv"

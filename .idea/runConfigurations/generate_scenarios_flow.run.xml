@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="calculate_ead" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-    <module name="test_models" />
+  <configuration default="false" name="generate_scenarios_flow" type="PythonConfigurationType" factoryName="Python" folderName="wholesale_ifrs9">
+    <module name="tnp-ifrs9-ecl-calculation-engine" />
     <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
@@ -8,12 +8,13 @@
       <env name="PYTHONUNBUFFERED" value="1" />
     </envs>
     <option name="SDK_HOME" value="" />
+    <option name="SDK_NAME" value="Python 3.11 (tnp-ifrs9-ecl-calculation-engine)" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    <option name="IS_MODULE_SDK" value="true" />
+    <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/impairment/calculate_ead.py" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trac_poc/flows/generate_scenarios/run_generate_scenarios_flow.py" />
     <option name="PARAMETERS" value="" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />

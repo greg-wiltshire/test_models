@@ -1,0 +1,31 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2021-11-30"
+      stage_2_probationary_period: 12
+      account_id_column: "AccountID"
+      lgd_macro_engine_off: False
+      pd_curve: "PiT PD"
+      use_curve: 3
+
+    inputs:
+      facilities_data: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/tnp_ifrs9_ecl_calculation_engine/run_engine_outside_ui/test_files/FacilityData - Nov2021 - Copy.csv"
+      staging_data: "C:/Users/jgw/PycharmProjects/tnp-ifrs9-ecl-calculation-engine/tnp_ifrs9_ecl_calculation_engine/run_engine_outside_ui/test_files/Probation.csv"
+      stage_2_definition: "data/stage_2_definition.csv"
+      stage_3_definition: "data/stage_3_definition.csv"
+      retail_ccf: "data/retail_ccf.csv"
+      corporate_rating_master_scale: "data/corporate_rating_master_scale.csv"
+      retail_rating_master_scale: "data/retail_rating_master_scale.csv"
+      sme_rating_master_scale: "data/sme_rating_master_scale.csv"
+      hnwi_rating_master_scale: "data/hnwi_rating_master_scale.csv"
+      staging_external_rating_mapping: "data/staging_external_rating_mapping.csv"
+      gcc_scenario_definitions: "data/gcc_scenario_definitions.csv"
+      uk_scenario_definitions: "data/uk_scenario_definitions.csv"
+      gcc_corporate_pd_term_structures: "outputs/gcc_corporate_pd_term_structures.csv"
+      gcc_retail_pd_term_structures: "outputs/gcc_retail_pd_term_structures.csv"
+      uk_corporate_pd_term_structures: "outputs/uk_corporate_pd_term_structures.csv"
+      uk_sme_pd_term_structures: "outputs/uk_sme_pd_term_structures.csv"
+      uk_hnwi_pd_term_structures: "outputs/uk_hnwi_pd_term_structures.csv"
+      ead_prepayment_curves: "data/ead_prepayment_curves.csv"
+    outputs:
+      ecl_calculation: "outputs/ecl_calculation.csv"

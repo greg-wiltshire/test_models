@@ -1,0 +1,18 @@
+job:
+  runModel:
+    parameters:
+      reporting_date: "2021-11-30"
+      n_years: 10
+      distribution_fitting_method: "gumbel_r"
+
+    inputs:
+      gcc_scenario_definitions: "inputs/gcc_scenario_definitions.csv"
+      gcc_base_case_scenario: "inputs/gcc_base_case_scenario.csv"
+      gcc_historic_macroeconomic_variables: "inputs/gcc_historic_macroeconomic_variables.csv"
+      gcc_historic_default_rates: "inputs/gcc_historic_default_rates.csv"
+      gcc_macroeconomic_model_coefficients: "inputs/gcc_macroeconomic_model_coefficients.csv"
+
+    outputs:
+      gcc_quarterly_scenarios: "outputs/gcc_quarterly_scenarios.csv"
+      gcc_monthly_scenarios: "outputs/gcc_monthly_scenarios.csv"
+      gcc_distribution_definition: "outputs/gcc_distribution_definition.csv"

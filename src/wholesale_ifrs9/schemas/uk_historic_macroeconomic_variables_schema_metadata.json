@@ -1,0 +1,6 @@
+{
+  "key": "uk_historic_macroeconomic_variables_schema",
+  "name": "UK historic macroeconomic variables schema",
+  "description":  "UK scenario schema, this schema contains the historic macroeconomic time series for the econometric models",
+  "regions": ["UK"]
+}
